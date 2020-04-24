@@ -15,6 +15,7 @@ var app = express();
 // 设置 Mongoose 连接
 const mongoose = require('mongoose');
 const mongoDB =
+  process.env.MONGODB_URI ||
   'mongodb+srv://sgal:NuYhvVwy0RI9qs93@cluster0-h4xuq.azure.mongodb.net/local_library?retryWrites=true&w=majority';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
